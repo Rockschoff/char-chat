@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const messagesSlice = createSlice({
     name : "messages",
     initialState : {
-        messages : ["This is first message" , "This is the second message"]
+        messages : [{text : "This is first message" , from : "bot"}]
     },
     reducers : {
         addMessage : (state , action)=>{

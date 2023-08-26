@@ -1,0 +1,23 @@
+.level-wrapper{
+    /* background-color: red; */
+    width : 100%;
+    display: flex;
+}
+
+.fromMe-true{
+    justify-content: end;
+}
+
+.fromMe-false{
+    justify-content: start;
+}
+
+.message-box{
+    background-color: aliceblue;
+    width : 50%;
+    height: auto;
+    margin : 10px;
+    border-radius : 5px;
+    padding : 5px;
+}
+

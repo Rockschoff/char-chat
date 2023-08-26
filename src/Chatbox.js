@@ -2,6 +2,11 @@ import React from "react"
 import "./styles.css"
 import { useDispatch, useSelector } from "react-redux"
 import { addMessage } from "./features/MessagesSlice"
+import Message from "./components/Message"
+import { Notification } from "./agent/Notification"
+
+
+
 export default function Chatbox(props){
     const messages = useSelector(state=>state.messages.messages)
     const dispatch = useDispatch()
@@ -12,16 +17,19 @@ export default function Chatbox(props){
         event.target.reset()
         if(message != ""){
             // console.log(message)
-            dispatch(addMessage(message))
+            dispatch(addMessage({text : message , from : "Me"}))
         }
-
-
     }
+
+    React.useEffect(()=>{
+        console.log('updated the state')
+        Notification(messages)
+    }, [messages])
     return <div className="chatbox">
         <div className = "chat-history">
             
             {messages.map((message , key)=>{
-                return <p key={key}>{message}</p>
+                return <Message key={key} message={message.text} fromMe={(message.from=="Me")}/>
             })}
             
         </div>
