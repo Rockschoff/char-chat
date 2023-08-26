@@ -23,6 +23,17 @@
     width : 100%;
     background-color: lightgray;
     border-radius: 50px 50px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+}
+.chat-history > p{
+    width : 90%;
+    text-align: right;
+    
+    
 }
 
 .chat-input{
